@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2019.12.4)  10 DEC 2019 23:13
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2019.12.4)  11 DEC 2019 12:19
 entering extended mode
 **./Boyer_Addison_Final.tex
 (Boyer_Addison_Final.tex
@@ -514,8 +514,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
  []
 
-File: DataPreview.png Graphic file (type bmp)
-<DataPreview.png>
+File: ./Figures/DataPreview.png Graphic file (type bmp)
+<./Figures/DataPreview.png>
 
 Overfull \hbox (47.15088pt too wide) in paragraph at lines 80--82
  [] 
@@ -526,8 +526,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
  []
 
-File: Mappings.png Graphic file (type bmp)
-<Mappings.png>
+File: ./Figures/Mappings.png Graphic file (type bmp)
+<./Figures/Mappings.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 94--97
 
@@ -545,38 +545,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--117
 
  []
 
-File: TrainingTest.png Graphic file (type bmp)
-<TrainingTest.png>
+File: ./Figures/TrainingTest.png Graphic file (type bmp)
+<./Figures/TrainingTest.png>
+File: ./Figures/LossEpoch.png Graphic file (type bmp)
+<./Figures/LossEpoch.png>
 
-Overfull \hbox (6.15099pt too wide) in paragraph at lines 124--126
+Overfull \hbox (1.651pt too wide) in paragraph at lines 131--133
  [] 
  []
 
-File: LossEpoch.png Graphic file (type bmp)
-<LossEpoch.png>
 [3]
-File: ConfusionMatrix.png Graphic file (type bmp)
-<ConfusionMatrix.png>
+File: ./Figures/ConfusionMatrix.png Graphic file (type bmp)
+<./Figures/ConfusionMatrix.png>
 
-Overfull \hbox (0.651pt too wide) in paragraph at lines 139--141
+Overfull \hbox (5.65099pt too wide) in paragraph at lines 139--141
  [] 
  []
 
-File: PrecisionRecall.png Graphic file (type bmp)
-<PrecisionRecall.png>
+File: ./Figures/PrecisionRecall.png Graphic file (type bmp)
+<./Figures/PrecisionRecall.png>
+File: ./Figures/AvgPR.png Graphic file (type bmp)
+<./Figures/AvgPR.png>
+File: ./Figures/ChartPR.png Graphic file (type bmp)
+<./Figures/ChartPR.png>
 
-Underfull \hbox (badness 6542) in paragraph at lines 163--164
+Overfull \hbox (6.15099pt too wide) in paragraph at lines 157--159
+ [] 
+ []
+
+File: ./Figures/ConfusedIm1.png Graphic file (type bmp)
+<./Figures/ConfusedIm1.png>
+[4]
+File: ./Figures/ConfusedIm2.png Graphic file (type bmp)
+<./Figures/ConfusedIm2.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
+
+ []
+
+File: ./Figures/CameraApp.png Graphic file (type bmp)
+<./Figures/CameraApp.png>
+
+Overfull \hbox (3.65099pt too wide) in paragraph at lines 190--192
+ [] 
+ []
+
+[5]
+Underfull \hbox (badness 6542) in paragraph at lines 199--200
 []\TU/lmr/m/n/10.95 Goyal, Sakshi., Sharma, Ishita., and
  []
 
-[4] (Boyer_Addison_Final.aux) ) 
+[6] (Boyer_Addison_Final.aux) ) 
 Here is how much of TeX's memory you used:
- 13265 strings out of 427272
- 247324 string characters out of 3140883
- 475951 words of memory out of 3000000
- 17684 multiletter control sequences out of 15000+200000
+ 13317 strings out of 427272
+ 248474 string characters out of 3140883
+ 472951 words of memory out of 3000000
+ 17734 multiletter control sequences out of 15000+200000
  535133 words of font info for 40 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  51i,7n,37p,829b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Boyer_Addison_Final.pdf (4 pages).
+Output written on Boyer_Addison_Final.pdf (6 pages).

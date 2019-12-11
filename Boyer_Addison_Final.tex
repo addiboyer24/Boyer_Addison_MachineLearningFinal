@@ -17,7 +17,7 @@
  left=20mm,
  top=20mm,
  }
-\graphicspath{ {./} }
+\graphicspath{ {./Figures/} }
 
 
 \begin{document}
@@ -119,14 +119,14 @@ Training the model correctly requires the minimization of a cost function with r
 \subsection*{4.0 Results}
 \textbf{4.1 Training and Test Set Accuracy}
 \par
-After training for 15 epochs the model was able to achieve approximately 99.5\% Training set accuracy, and 93\% Test set accuracy.  Training and Test set accuracy by epoch can be found in Figure 4.1.1 below.
+After training for 15 epochs the model was able to achieve approximately 100\% Training set accuracy, and 94\% Test set accuracy.  Training and Test set accuracy by epoch can be found in Figure 4.1.1 below.
 \begin{center}
 \includegraphics[scale=.5]{TrainingTest}
 \textbf{Figure 4.1.1} Training and Test Set Accuracy per Epoch.
 \end{center}
 \textbf{4.2 Convergence of the Model}
 \par
-The model has appeared to have converged, as the loss is tending towards 0.  This can be seen in Figure 4.2.1 below
+The model appears to have converged, as the loss is tending towards 0.  This can be seen in Figure 4.2.1 below.
 \begin{center}
 \includegraphics[scale=.5]{LossEpoch}
 \textbf{Figure 4.2.1} Categorical Cross Entropy Loss per Epoch.
@@ -144,16 +144,52 @@ In order to learn what the model was good at classifying, as well as what it str
 \textbf{Figure 4.3.2} Precision and Recall by Letter.
 \end{center}
 \par
-Precision and Recall are good metrics to measure how well the model is performing on certain classifications.  Precision is defined as the total number of correctly classified positive examples, over the total number of positives.  In contrast, Recall is the total number of correctly classified examples, over the total positives.  Precision and Recall calculations are displayed in Figure 4.3.2.
+Precision and Recall are good metrics to measure how well the model is performing on certain classifications.  Precision is defined as the total number of correctly classified positive examples, over the total number of positives.  In contrast, Recall is the total number of correctly classified examples, over the total positives.  Precision and Recall calculations are displayed in Figure 4.3.2 and 4.3.3.
+\begin{center}
+\includegraphics[scale=1]{AvgPR} \\
+\textbf{Figure 4.3.3} Average Precision and Recall for the Trained Model.
+\end{center}
+\subsection*{5.0 Discussion}
+\textbf{5.1 Confused Images}
+\par
+A confusion matrix like the one in Figure 4.3.1 is a great tool to identify what images the CNN had difficulty classifying, and which images it classified with ease.  The class on the x-axis is the predicted class, and the class on the y-axis is the actual class.  The model was able to achieve an average precision of 93.39\%, and an average recall of 93.47\% as seen in Figure 4.3.3 above.  
+\begin{center}
+\includegraphics[scale=.5]{ChartPR}
+\textbf{Figure 5.1.1} A Graphical Representation of Precision and Recall from Figure 4.3.2.
+\end{center}
 
+\par
+With this in mind, it's useful to examine the classes that performed drastically worst than the average in either category.  These classes can be easily identified in Figure 4.3.2 above in conjunction with the confusion matrix in Figure 4.3.1.  It appears classes 17 and 19 have the lowest recall and/or precision of all the other classes.  
 
-\subsection*{Discussion}
-
-Discussion goes here.
-
-\subsection*{Conclusion}
-
-Conclusion goes here.
+\begin{center}
+\includegraphics[scale=.70]{ConfusedIm1} \\
+\textbf{Figure 5.1.2} An image predicted to be an R, but is actually a V.
+\end{center}
+\par
+According to the confusion matrix there are approximately 40 images that were classified as R's but were actually V's.  An example can be found in Figure 5.1.2 above.  It appears that the model learned the lower hand positions, and not the split fingers that distinguish the two from each other.  Observe that this is the main difference between the two letters in Figure 1.1.1.
+\begin{center}
+\includegraphics[scale=.70]{ConfusedIm2} \\
+\textbf{Figure 5.1.3} An image predicted to be an X, but is actually a T.
+\end{center}
+\par
+According to the confusion matrix there are approximately 61 images that were classified as X's but were actually T's.  An example can be found in Figure 5.1.3.  It appears that the model did not learn how to distinguish the position of the pointer finger in each of these signs (see Figure 1.1.1). \\
+\\
+\textbf{5.2 Study Comparison}
+\par
+Compared to the other studies in the literature review section, this model was most similar to that described in \textbf{[1]}.  One key difference is that their network takes 4 feature maps as input, whereas our model takes simply one.  Their model was able to achieve around 82\% recall, and precision.  This is one area in which our model seems out-preformed theirs.  
+\par
+In their study the model was trained for hundreds of epochs, whereas ours was only trained for 15.  Our model architecture is more complex than theirs, and utilizes a different activation function.  They used a Leaky ReLU activation function, where the model outlined in this paper used regular ReLU.  Our model also utilized Dropout, which may have contributed to a higher test set accuracy.  It appears that our model has converged, but potentially it could've been trained for more epochs for an increase in test set accuracy.
+\subsection*{6.0 Conclusion}
+In conclusion, the proposed model architecture was able to produce 100\% test set accuracy, and 94\% training accuracy.  This model appears to have out-preformed the models outlined in various other research studies using Convolutional Neural Networks as a Sign Language Classifier.  It appears that our model had some difficulty classifying signs that were extremely similar, namely T, X, R, and V.  
+\par 
+It appears the model might have benefited from a longer training time (i.e. more epochs).  The model was implemented in Python, and the code base can be found in AddisonCodeBase.py.  Here, all elements of reading in the data, training the model, and validating the model have been implemented. \\ \\
+\textbf{6.1 Future Work}
+\par
+Now that an accurate model has been trained for ASL sign language classification, it can be applied to the problem of Sign Language Recognition.  The next step would be to build an application using this trained model, that could interpret sign language from the user.  The start of such application can be found in Webcam.py.  A screenshot of the initial prototype can be found in Figure 6.1.1 below.
+\begin{center}
+\includegraphics[scale=.5]{CameraApp}
+\textbf{Figure 6.1.1} A prototype interface for a SLR system using the model outlined in this paper.
+\end{center}
 
 \subsection*{References}
 \begin{enumerate}
