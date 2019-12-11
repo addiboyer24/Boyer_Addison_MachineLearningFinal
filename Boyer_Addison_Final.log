@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2019.12.4)  11 DEC 2019 12:19
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2019.12.4)  11 DEC 2019 12:34
 entering extended mode
 **./Boyer_Addison_Final.tex
 (Boyer_Addison_Final.tex
@@ -554,7 +554,6 @@ Overfull \hbox (1.651pt too wide) in paragraph at lines 131--133
  [] 
  []
 
-[3]
 File: ./Figures/ConfusionMatrix.png Graphic file (type bmp)
 <./Figures/ConfusionMatrix.png>
 
@@ -562,6 +561,7 @@ Overfull \hbox (5.65099pt too wide) in paragraph at lines 139--141
  [] 
  []
 
+[3]
 File: ./Figures/PrecisionRecall.png Graphic file (type bmp)
 <./Figures/PrecisionRecall.png>
 File: ./Figures/AvgPR.png Graphic file (type bmp)

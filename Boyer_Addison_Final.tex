@@ -111,7 +111,7 @@ $$
 \par
 Finally, after ReLU activation, each feature map is down sampled via a max pooling operation with a kernel size of 2, and a padding of size 2.  The output is then passed as input to the next convolutional layer block.  After the series of convolutional layer blocks the output is flattened and passed into the fully connected feed forward layer as input.
 \par
-In the fully connected feed forward layer a series of of linear transformations and ReLU activation's transform the output from the convolutional layer into logits, or probabilities of class membership.  In each hidden layer, the size of the features is nearly halved, and a dropout of approximately 10\% is applied the nodes of that layer.  Adding dropout to the model makes it more robust, and helps the model to not be over fitted.  A summary of the proposed Convolutional Neural Network architecture can be found below in Figure 3.3.1.
+In the fully connected feed forward layer a series of of linear transformations and ReLU activation's transform the output from the convolutional layer into logits, or probabilities of class membership.  In each hidden layer, the size of the features is nearly halved, and a dropout of approximately 10\% is applied the nodes of that layer.  Adding dropout to the model makes it more robust, and helps the model to not be over fitted.
 \\ \\
 \textbf{3.4 Model Training}
 \par
