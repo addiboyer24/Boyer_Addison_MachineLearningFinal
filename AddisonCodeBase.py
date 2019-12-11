@@ -19,13 +19,15 @@ def read_data(fname):
         label = int(line[0])
         image = line[1:]
         y.append(label)
+        # take flattend input, and reshape to 28x28 image
         x.append(np.array(image, dtype=np.float).reshape(28,28))
     
     
     x = np.array(x)
     x = x.reshape(x.shape[0], x.shape[1], x.shape[2], 1)
-    # Normalize
+    # Normalize the pixels to be between 0 and 1.
     x /= 255.
+    # Swap axes for pytorch model
     x = np.swapaxes(x, 1, 3)
     
     return x, np.array(y)
@@ -92,11 +94,11 @@ class Net(nn.Module):
             
         x = self.conv_layer(x)
             
-        x = x.view(x.size(0), -1)
+        x = x.view(x.size(0), -1) # Flatten output of conv layer
             
         x = self.fc_layer(x)
             
-        return x
+        return x #logits
         
     
 
@@ -115,10 +117,11 @@ class SignLanguageClassifier(object):
         self.loss = None
     
     def get_model(self):
-        return Net(self.N, self.n_input)
+        return Net(self.N, self.n_input) # Return a new instance of Net(N, n_input)
     
     def train(self):
-        
+
+        # Pass x_train, y_train, x_test, y_test tensors into a data loader object
         training_data = TensorDataset(self.x_train, self.y_train)
         test_data = TensorDataset(self.x_test, self.y_test)
         
@@ -212,6 +215,7 @@ class SignLanguageClassifier(object):
         return confusion_matrix(y_pred_test, self.y_test.detach().numpy())
 
     def train_test_chart(self):
+        # Show the training/test accuracy per epoch
         x = np.linspace(1, 15, 15)
         plt.title("Training vs Test Set Accuracy")
         plt.plot(x, self.training_accs, 'r-', label='training')
@@ -222,6 +226,7 @@ class SignLanguageClassifier(object):
         plt.show()
 
     def loss_epoch_chart(self):
+        # Show the loss per epoch
         x = np.linspace(1, 15, 15)
         loss = self.loss
         plt.title("Loss vs Epoch")
@@ -231,6 +236,7 @@ class SignLanguageClassifier(object):
         plt.show()
 
     def show_confusion_matrix(self):
+        #Show a graphical representation of the confusion matrix
         confusion_M = self.confusion_M()
 
         plt.title("Confusion Matrix")
@@ -262,6 +268,7 @@ class SignLanguageClassifier(object):
         plt.show()
 
     def get_precision_recall(self):
+        #Get the precision and recall chart
         mappings = get_mapping_dictionary(self.y_train.detach().numpy())
         confusion_M = self.confusion_M()
         # Precision and Recall
